@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://api.backendless.com/9BAF6A22-E157-31DA-FF5E-A5A83A981300/001001E5-D634-42E9-A62F-DFFFA026F353',
+
+  backendless: {
+    APP_ID: '9BAF6A22-E157-31DA-FF5E-A5A83A981300',
+    API_KEY: '001001E5-D634-42E9-A62F-DFFFA026F353',
+  }
 };
 
 /*
