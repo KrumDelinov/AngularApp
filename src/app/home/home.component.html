@@ -1,0 +1,18 @@
+<div *ngIf="(isLogged$ | async)">
+  <div *ngIf="((cu | async).role == 'admin')">
+    <app-admin></app-admin>
+  </div>
+  <div *ngIf="!((cu | async).role == 'admin')">
+    Something!
+  </div>
+</div>
+<div *ngIf="!(isLogged$ | async)">
+  <h1>doSome</h1>
+  <h1>doSome</h1>
+  <h1>doSome</h1>
+  <h1>doSome</h1>
+  <h1>doSome</h1>
+  <h1>doSome</h1>
+  <h1>doSome</h1>
+  <h1>doSome</h1>
+</div>

@@ -1,0 +1,9 @@
+.head-row{
+  display: flex;
+}
+#dashboard{
+  padding-left: 15px;
+}
+#report{
+  margin-right: 15px;
+}

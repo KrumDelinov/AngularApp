@@ -1,0 +1,8 @@
+#bg-gradient-primary2{
+  background: snow;
+}
+.error{
+  font-size: larger;
+    color: red;
+    margin-top: revert;
+}
