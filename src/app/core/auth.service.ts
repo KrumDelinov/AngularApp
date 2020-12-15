@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Key } from 'protractor';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError, tap, map } from 'rxjs/operators';
@@ -15,7 +14,8 @@ const some = [];
 @Injectable()
 export class AuthService {
 
-  // tslint:disable-next-line:variable-name
+
+  // tslint:disable-next-line: variable-name
   private _currentUser: BehaviorSubject<IUser | null> = new BehaviorSubject(undefined);
   currentUser$ = this._currentUser.asObservable();
   isLogged$ = this.currentUser$.pipe(map(user => !!user));
@@ -48,6 +48,8 @@ export class AuthService {
       tap((user: IUser) => this._currentUser.next(null))
     );
   }
+
+
 
   authenticate(): Observable<any> {
     return this.http.get(`${apiUrl}/data/users/${some[0]}`).pipe(

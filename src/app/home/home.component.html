@@ -2,8 +2,11 @@
   <div *ngIf="((cu | async).role == 'admin')">
     <app-admin></app-admin>
   </div>
-  <div *ngIf="!((cu | async).role == 'admin')">
-    Something!
+  <div *ngIf="((cu | async).role == 'teacher')">
+    <app-new-student></app-new-student>>
+  </div>
+  <div *ngIf="((cu | async).role == 'pending')">
+    Waiting pending
   </div>
 </div>
 <div *ngIf="!(isLogged$ | async)">

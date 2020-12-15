@@ -1,0 +1,23 @@
+<form class="user" [formGroup]="form">
+  <div class="form-group row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <input [class.input-error]="form.get('FirstName').touched && !!form.get('FirstName').errors" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" formControlName="FirstName">
+      <p *ngIf="form.get('FirstName').touched && form.get('FirstName').errors?.required" class="error">
+        First Name is required!
+      </p>
+    </div>
+
+    <div class="col-sm-6">
+      <input [class.input-error]="form.get('LastName').touched && !!form.get('LastName').errors" type="text" class="form-control form-control-user" id="exampleLastName" placeholder="LastName" formControlName="LastName">
+      <p *ngIf="form.get('LastName').touched && form.get('LastName').errors?.required" class="error">
+        LastName is required!
+      </p>
+    </div>
+  </div>
+
+  <hr>
+  <button type="button" (click)="submitHandler()"  class="btn btn-primary btn-user btn-block">Create Teacher</button>
+
+  <hr>
+</form>
+

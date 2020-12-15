@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './user/register/register.component';
 import { AuthGuard } from './core/guards/auth.guatd';
+import { NewStudentComponent } from './teacher/new-student/new-student.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,14 @@ const routes: Routes = [
         pathMatch: 'full',
         path: 'user-detail', component: UserDetailComponent,
         canActivateChild: [AuthGuard]
+      },
+      {
+        path: 'new-student',
+        component: NewStudentComponent,
+        data: {
+          title: 'NEW Student',
+          isLogged: true
+        }
       }
 
     ]
