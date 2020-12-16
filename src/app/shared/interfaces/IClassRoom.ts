@@ -1,5 +1,6 @@
 export interface IClassRoom{
-  name: string;
+  Name: string;
+  objectId: string;
   students: string[];
 
 }

@@ -3,7 +3,7 @@
     <app-admin></app-admin>
   </div>
   <div *ngIf="((cu | async).role == 'teacher')">
-    <app-new-student></app-new-student>>
+    <app-teacher-home></app-teacher-home>
   </div>
   <div *ngIf="((cu | async).role == 'pending')">
     Waiting pending

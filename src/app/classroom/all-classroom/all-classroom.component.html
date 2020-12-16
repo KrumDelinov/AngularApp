@@ -1,0 +1,20 @@
+
+<div >
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Id</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let clasroom of classroomList; let i = index">
+      <tr>
+        <th scope="row">{{i + 1}}</th>
+        <td>{{classroom.Name}}</td>
+        <td ><a [routerLink]="['/user-detail', classroom.objectId]">{{classroom.objectId}}</a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

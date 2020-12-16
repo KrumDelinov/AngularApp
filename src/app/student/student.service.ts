@@ -1,4 +1,4 @@
-import { IClassRoom } from './../shared/interfaces/IClassRoom';
+import { IStudent } from './../shared/interfaces/IStudent';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -9,13 +9,11 @@ const apiUrl = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
 })
-export class ClassroomService {
+export class StudentService {
 
   constructor(private http: HttpClient) { }
 
-  loadClassRoomList(): Observable<IClassRoom[]> {
-    return this.http.get<IClassRoom[]>(`${apiUrl}/data/classroom`);
+  loadStudentList(): Observable<IStudent[]> {
+    return this.http.get<IStudent[]>(`${apiUrl}/data/student`);
   }
 }
-
-

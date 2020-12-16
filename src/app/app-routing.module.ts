@@ -1,3 +1,4 @@
+import { AllStudentComponent } from './student/all-student/all-student.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { AdminComponent } from './admin/admin/admin.component';
@@ -9,6 +10,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './user/register/register.component';
 import { AuthGuard } from './core/guards/auth.guatd';
 import { NewStudentComponent } from './teacher/new-student/new-student.component';
+import { pathToFileURL } from 'url';
+import { AllClassroomComponent } from './classroom/all-classroom/all-classroom.component';
 
 
 const routes: Routes = [
@@ -51,6 +54,30 @@ const routes: Routes = [
         }
       },
       {
+        path: 'home/all-users',
+        component: UsersAllComponent,
+        data: {
+          isLogged: true,
+          title: 'USER PROFILE'
+        }
+      },
+      {
+        path: 'home/all-students',
+        component: AllStudentComponent,
+        data: {
+          isLogged: true,
+          title: 'ALL STUDENTS'
+        }
+      },
+      {
+        path: 'home/all-classrooms',
+        component: AllClassroomComponent,
+        data: {
+          isLogged: true,
+          title: 'ALL CLASSROOMS'
+        }
+      },
+      {
         pathMatch: 'full',
         path: 'admin', component: AdminComponent,
         canActivateChild: [AuthGuard]
@@ -61,10 +88,10 @@ const routes: Routes = [
         canActivateChild: [AuthGuard]
       },
       {
-        path: 'new-student',
+        path: 'home/new',
         component: NewStudentComponent,
         data: {
-          title: 'NEW Student',
+          title: 'NEW STUDENT',
           isLogged: true
         }
       }

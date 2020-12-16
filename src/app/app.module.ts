@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { TeacherModule } from './teacher/teacher.module';
+import { StudentModule } from './student/student.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TeacherModule } from './teacher/teacher.module';
     ReactiveFormsModule,
     UserModule,
     AdminModule,
-    TeacherModule
+    TeacherModule,
+    StudentModule
   ],
   providers: [],
   bootstrap: [

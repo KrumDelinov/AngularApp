@@ -1,3 +1,4 @@
+import { TeacherRoutes } from './teacher.routing';
 
 import { TeacherService } from './teacher.service';
 import { NgModule } from '@angular/core';
@@ -15,13 +16,15 @@ import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    TeacherRoutes
   ],
   providers: [
     TeacherService
   ],
   exports: [
-    NewStudentComponent
+    NewStudentComponent,
+    TeacherHomeComponent
   ]
 })
 export class TeacherModule { }

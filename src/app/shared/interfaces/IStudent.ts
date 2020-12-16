@@ -1,4 +1,6 @@
+import { IClassRoom } from './IClassRoom';
 export interface IStudent{
-  firstName: string;
-  lastName: string;
+  FirstName: string;
+  LastName: string;
+  ClassRoom: IClassRoom;
 }
