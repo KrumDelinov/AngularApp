@@ -18,7 +18,7 @@ export class HeaderComponent {
 
   constructor(
     private authService: AuthService,
-    router: Router
+    private router: Router
   ) {
 
     router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((e: NavigationEnd) => {
@@ -27,8 +27,8 @@ export class HeaderComponent {
   }
 
   logoutHandler(): void {
-    this.authService.logout().subscribe();
-    console.log(this.id$)
+    this.authService.logout().subscribe(() => this.router.navigate(['login']));
+
   }
 
 }

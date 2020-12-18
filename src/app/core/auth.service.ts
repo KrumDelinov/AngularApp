@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { TagPlaceholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
@@ -9,21 +10,18 @@ import { IUser } from '../shared/interfaces/IUser';
 
 const apiUrl = environment.apiUrl;
 
-const some = [];
+
 
 @Injectable()
 export class AuthService {
 
 
-  // tslint:disable-next-line: variable-name
   private _currentUser: BehaviorSubject<IUser | null> = new BehaviorSubject(undefined);
   currentUser$ = this._currentUser.asObservable();
   isLogged$ = this.currentUser$.pipe(map(user => !!user));
   isReady$ = this.currentUser$.pipe(map(user => user !== undefined));
   role$ = this.currentUser$.pipe(map(role => role));
   id$ = this.currentUser$.pipe(map(objectId => objectId));
-
-  some = Object.values(this.id$);
 
   constructor(private http: HttpClient) { }
 
@@ -52,7 +50,7 @@ export class AuthService {
 
 
   authenticate(): Observable<any> {
-    return this.http.get(`${apiUrl}/data/users/${some[0]}`).pipe(
+    return this.http.get(`${apiUrl}/data/users${this.id$}`).pipe(
       tap((user: IUser) => this._currentUser.next(user)),
       catchError(() => {
         this._currentUser.next(null);

@@ -47,10 +47,10 @@
      <li class="nav-item-log">
 
       <a *ngIf="(isLogged$ | async)"  class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        <i class="far fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>
         Hello {{(currentUser$ | async)?.FirstName}}
       </a>
-      <a *ngIf="(isLogged$ | async)"  class="dropdown-item" (click)="logoutHandler()" data-toggle="modal" data-target="#logoutModal">
+      <a *ngIf="(isLogged$ | async)"  class="dropdown-item" (click)="logoutHandler()">
         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
         Logout
       </a>

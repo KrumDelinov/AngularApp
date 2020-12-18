@@ -1,6 +1,5 @@
+import { IStudent } from './IStudent';
 export interface IClassRoom{
   Name: string;
-  objectId: string;
-  students: string[];
-
+  Students: IStudent[];
 }

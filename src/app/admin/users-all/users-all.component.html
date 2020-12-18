@@ -9,7 +9,7 @@
         <th scope="col">Last Name</th>
         <th scope="col">Role</th>
         <th scope="col">email</th>
-        <th scope="col">Id</th>
+        <th *ngIf="(isLogged$ | async)"  scope="col">Id</th>
 
       </tr>
     </thead>
@@ -20,7 +20,7 @@
         <td>{{user.LastName}}</td>
         <td>{{user.role}}</td>
         <td>{{user.email}}</td>
-        <td ><a [routerLink]="['/user-detail', user.objectId]">{{user.objectId}}</a> </td>
+        <td *ngIf="(isLogged$ | async)" ><a [routerLink]="['/user-detail', user.objectId]">{{user.objectId}}</a> </td>
       </tr>
     </tbody>
   </table>

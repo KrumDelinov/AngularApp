@@ -21,11 +21,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { TeacherModule } from './teacher/teacher.module';
 import { StudentModule } from './student/student.module';
+import { ClassroomModule } from './classroom/classroom.module';
+import { ErrorComponent } from './error/error.component';
+import { HomeNoUserComponent } from './home-no-user/home-no-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent,
+    HomeNoUserComponent
    ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { StudentModule } from './student/student.module';
     UserModule,
     AdminModule,
     TeacherModule,
-    StudentModule
+    StudentModule,
+    ClassroomModule
   ],
   providers: [],
   bootstrap: [

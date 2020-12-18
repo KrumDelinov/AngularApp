@@ -1,5 +1,5 @@
+import { LogoutComponent } from './user/logout/logout.component';
 import { AllStudentComponent } from './student/all-student/all-student.component';
-import { ProfileComponent } from './user/profile/profile.component';
 import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { UsersAllComponent } from './admin/users-all/users-all.component';
@@ -10,8 +10,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './user/register/register.component';
 import { AuthGuard } from './core/guards/auth.guatd';
 import { NewStudentComponent } from './teacher/new-student/new-student.component';
-import { pathToFileURL } from 'url';
-import { AllClassroomComponent } from './classroom/all-classroom/all-classroom.component';
+import { AllComponent } from './classroom/all/all.component';
+import { ErrorComponent } from './error/error.component';
 
 
 const routes: Routes = [
@@ -46,6 +46,14 @@ const routes: Routes = [
         }
       },
       {
+        pathMatch: 'full',
+        path: 'logout', component: LogoutComponent,
+        data: {
+          isLogged: false,
+          title: 'USER LOGOUT'
+        }
+      },
+      {
         path: 'user-detail/:id',
         component: UserDetailComponent,
         data: {
@@ -57,7 +65,6 @@ const routes: Routes = [
         path: 'home/all-users',
         component: UsersAllComponent,
         data: {
-          isLogged: true,
           title: 'USER PROFILE'
         }
       },
@@ -71,7 +78,7 @@ const routes: Routes = [
       },
       {
         path: 'home/all-classrooms',
-        component: AllClassroomComponent,
+        component: AllComponent,
         data: {
           isLogged: true,
           title: 'ALL CLASSROOMS'
@@ -93,6 +100,13 @@ const routes: Routes = [
         data: {
           title: 'NEW STUDENT',
           isLogged: true
+        }
+      },
+      {
+        path: '**',
+        component: ErrorComponent,
+        data: {
+          title: '404'
         }
       }
 

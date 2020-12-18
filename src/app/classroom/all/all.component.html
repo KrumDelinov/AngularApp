@@ -1,0 +1,7 @@
+<p>all works!</p>
+<div *ngFor="let cls of classList">
+  {{cls.Name}}
+  <div *ngFor="let student of cls.Students">
+    <p>{{student.FirstName}}</p>
+  </div>
+</div>

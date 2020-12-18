@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './user.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -13,7 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    LogoutComponent
   ],
   imports: [
     CommonModule,

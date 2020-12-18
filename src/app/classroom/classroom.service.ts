@@ -1,3 +1,5 @@
+import { tap } from 'rxjs/operators';
+import { IStudent } from './../shared/interfaces/IStudent';
 import { IClassRoom } from './../shared/interfaces/IClassRoom';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,6 +12,8 @@ const apiUrl = environment.apiUrl;
   providedIn: 'root'
 })
 export class ClassroomService {
+
+  classroom: IClassRoom;
 
   constructor(private http: HttpClient) { }
 

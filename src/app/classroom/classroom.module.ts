@@ -2,22 +2,22 @@ import { RouterModule } from '@angular/router';
 import { ClassroomService } from './classroom.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AllClassroomComponent } from './all-classroom/all-classroom.component';
+import { AllComponent } from './all/all.component';
 
 
 
 @NgModule({
-  declarations: [AllClassroomComponent],
-  imports: [
-    CommonModule,
-    RouterModule
+  declarations: [
+    AllComponent
   ],
-
+  imports: [
+    CommonModule
+  ],
   providers: [
     ClassroomService
   ],
   exports: [
-    AllClassroomComponent
+    AllComponent
   ]
 })
 export class ClassroomModule { }
